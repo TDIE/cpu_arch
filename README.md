@@ -1,10 +1,10 @@
-# Custom 16-bit CPU Design
+# Custom CPU Design
 ## Summary
-Through this project, the micro-architecture, RTL, and pre-Si verification of a simple, 16-bit, processor were created.
-The CPU is capable of executing 18 instructions which include arithmetic, branches, and jumps. The RTL is written in Verilog. Verification at the system level is done through the use of the UVM (System Verilog).
+This project's goal was to design and implement the micro-architecture and RTL for a simple, 16-bit, processor. Pre-Si verification was done by using the Universal Verification Method (UVM).
+The CPU is capable of executing 18 instructions which include arithmetic, branches, and jumps. The RTL was written in Verilog. SystemVerilog was used to create the UVM verification IP.
 
 ## Scope and Schedule
-The project was performed by just the author so the scope had to be kept simple in order for the project to be completed in 1 to 2 quarters of after work hours. This means that some performance enhancing features were descoped in order to finish the project within this timeline.
+The project was performed solely by the author so the scope had to be kept simple in order for the project to be completed in 1 to 2 quarters of after work hours. This means that some features were descoped in order to finish the project within this timeline. Physical implementation, e.g. in an FPGA, was also out of scope for this reason.
 
 ## Documentation Structure
 The included design document has the following layout:
