@@ -1,0 +1,28 @@
+#Automation script to configure Questa and run the simulation
+#Author: Tom Diederen, Sept. 2023
+#https://github.com/TDIE/cpu_arch
+
+#Start Sim
+vsim -c -voptargs=+acc  work.hdl_top work.hvl_top +UVM_TESTNAME=base_test -classdebug -msgmode both -uvmcontrol=all
+
+#Add waves plus dividers
+add wave -divider Interface
+add wave -position end sim:/hdl_top/cpu_if0/*
+
+#add wave -divider DUT_Signals
+#add wave -position end  sim:/hdl_top/cpu_dut/ctrl_top0/imem0/instruction
+#add wave -position end  sim:/hdl_top/cpu_dut/ctrl_top0/imem0/instr_address
+##add wave -position end sim:/hdl_top/cpu_dut/ctrl_top0/pc0/*
+#add wave -position end  sim:/hdl_top/cpu_dut/dp_top0/eu0/op_select
+#add wave -position end  sim:/hdl_top/cpu_dut/dp_top0/bus_D
+#add wave -position end  sim:/hdl_top/cpu_dut/dp_top0/address_out
+#add wave -position end  sim:/hdl_top/cpu_dut/dp_top0/data_out
+#add wave -position end  sim:/hdl_top/cpu_dut/dp_top0/eu0/zero
+#add wave -position end  sim:/hdl_top/cpu_dut/dp_top0/data_in
+#add wave -position end  sim:/hdl_top/cpu_dut/ctrl_top0/reset
+
+#add wave -divider Registers
+#add wave -position end sim:/hdl_top/cpu_dut/dp_top0/rf_reg0/*
+
+#Send all 26 sequence items. 50 ns clock period gives 1300 ns.
+run 1300
